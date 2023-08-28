@@ -16,17 +16,17 @@ void node_height(const binary_tree_t *node, size_t a_height, size_t *max)
 {
 if (node != NULL)
 {
-if ((tnod->left == NULL) && (node->right == NULL))
+if ((node->left == NULL) && (node->right == NULL))
 {
-if (a_height > max*)
+if (a_height > *max)
 {
 *max = a_height;
 }
 }
 else
 {
-node_height(node->left, a_height + 1, max;
-node_height(nodeOOB->right, a_height + 1, max);
+node_height(node->left, a_height + 1, max);
+node_height(node->right, a_height + 1, max);
 }
 }
 }
@@ -39,8 +39,8 @@ node_height(nodeOOB->right, a_height + 1, max);
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t height = 0;
+size_t height = 0;
 
-	node_height(tree, 0, &height);
-	return (height);
+node_height(tree, 0, &height);
+return (height);
 }
