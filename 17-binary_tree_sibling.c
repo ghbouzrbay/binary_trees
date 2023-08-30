@@ -27,5 +27,5 @@ b = node->parent->right;
 }
 }
 
-return (a == node ? b : left);
+return (a == node ? b : a);
 }
