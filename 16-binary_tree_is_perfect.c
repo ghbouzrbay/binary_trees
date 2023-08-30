@@ -1,41 +1,55 @@
-#include "binary_trees.h"
-
-
+#include "binary_tress.h"
 
 /**
  * binary_tree_is_perfect - function that checks if a binary tree is perfect.
+ *
  * @tree: pointer to the root node of the tree to check.
  *
  * Return: 1 if tree is full. 0 otherwise.
  */
+
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-
-size_t leaves_ = 0;
+size_t count = 0;
 size_t height = 0;
-size_t current = 0;
 
-if (tree != NULL)
+tree_stats(tree, 0, &count, &height);
+
+return ((int)count == (1 << height) ? 1 : 0);
+}
+
+
+/**
+ * binary_tree - ...
+ *
+ * @p: pointer to the root node of the tree to check.
+ * @a_height: accumulated height of the current path in the tree.
+ * @count: pointer to the tree's leaf count value.
+ * @max: pointer to the tree's maximum height value.
+ *
+ */
+void tree_stats(const binary_tree_t *p, size_t a_height, size_t *count, size_t *max)
 {
 
-if ((tree->left == NULL) && (tree->right == NULL))
+if (p != NULL)
 {
 
-if (leaves != NULL)
-(*leaves)++;
+if ((p->left == NULL) && (p->right == NULL))
+{
 
-if ((height != NULL) && (n > *height))
-*height = n;
+if (count != NULL)
+(*count)++;
+
+if ((max != NULL) && (a_height > *max))
+a_height = max;
+}
 }
 
 else
 {
-binary_tree_is_perfect(tree->left);
-binary_tree_is_perfect(tree->right);
-return (current + 1);
+binary_tree(p->left, a_height + 1, max);
+binary_tree(p->right, a_height + 1, count, max);
 }
+	
 }
-
-
-return ((int)leaves == (1 << height) ? 1 : 0);
-}
+}	
