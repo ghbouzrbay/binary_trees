@@ -14,7 +14,7 @@ size_t num1, num2;
 size_t num = 0;
 
 if (tree == NULL)
-{		
+{
 return (0);
 }
 
@@ -23,7 +23,7 @@ if (tree->left == NULL && tree->right == NULL)
 return (1);
 }
 
-num1= binary_tree_leaves(tree->left);
+num1 = binary_tree_leaves(tree->left);
 num2 = binary_tree_leaves(tree->right);
 num += num1 + num2;
 

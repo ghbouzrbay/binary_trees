@@ -24,5 +24,5 @@ size_left = binary_tree_size(tree->left);
 size_right = binary_tree_size(tree->right);
 size += size_right + size_left;
 
-return (size + 1)
+return (size + 1);
 }

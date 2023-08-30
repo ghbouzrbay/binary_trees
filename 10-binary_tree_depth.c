@@ -19,10 +19,11 @@ if (tree != NULL)
 {
 node = tree->parent;
 
-do {
+while (node != NULL)
+{
 depth_node++;
 node = node->parent;
-}while  (node != NULL)
+}
 
 }
 
