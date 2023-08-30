@@ -1,4 +1,6 @@
-#include "binary_tress.h"
+#include "binary_trees.h"
+
+void binary_tree(const binary_tree_t *p, size_t a_height, size_t *count, size_t *max);
 
 /**
  * binary_tree_is_perfect - function that checks if a binary tree is perfect.
@@ -13,7 +15,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 size_t count = 0;
 size_t height = 0;
 
-tree_stats(tree, 0, &count, &height);
+binary_tree(tree, 0, &count, &height);
 
 return ((int)count == (1 << height) ? 1 : 0);
 }
@@ -28,7 +30,7 @@ return ((int)count == (1 << height) ? 1 : 0);
  * @max: pointer to the tree's maximum height value.
  *
  */
-void tree_stats(const binary_tree_t *p, size_t a_height, size_t *count, size_t *max)
+void binary_tree(const binary_tree_t *p, size_t a_height, size_t *count, size_t *max)
 {
 
 if (p != NULL)
@@ -41,15 +43,14 @@ if (count != NULL)
 (*count)++;
 
 if ((max != NULL) && (a_height > *max))
-a_height = max;
+a_height = *max;
 }
 }
 
 else
 {
-binary_tree(p->left, a_height + 1, max);
+binary_tree(p->left, a_height + 1, count, max);
 binary_tree(p->right, a_height + 1, count, max);
 }
 	
 }
-}	
