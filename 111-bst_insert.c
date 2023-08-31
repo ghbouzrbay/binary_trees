@@ -11,28 +11,18 @@
  *
  * Return: pointer to the created node, or NULL on failure.
  */
-
 bst_t *bst_insert(bst_t **tree, int value)
 {
-bst_t *node = NULL;
-bst_t *current = NULL;
-
-if (!tree)
-return (NULL);
-
+bst_t *node = NULL, *current = NULL;
 node = binary_tree_node(NULL, value);
-
-if (!node)
+if (!tree && !node)
 return (NULL);
-
 if (!*tree)
 {
 *tree = node;
 return (node);
 }
-
 current = *tree;
-
 while (current)
 {
 if (value < current->n)
@@ -55,13 +45,11 @@ break;
 }
 current = current->right;
 }
-
 else
 {
 free(node);
 return (NULL);
 }
 }
-
 return (node);
 }

@@ -26,18 +26,15 @@ right = binary_tree_is_bst(tree->right);
 
 if (tree->left != NULL && tree->right != NULL)
 {
-
 if (tree->left->n < tree->n && tree->right->n > tree->n)
 return (left && right);
 
 else
 return (0);
-
 }
 
 if (tree->left != NULL)
 {
-
 if (tree->left->n < tree->n)
 return (left);
 

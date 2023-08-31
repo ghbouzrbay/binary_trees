@@ -10,6 +10,7 @@
 
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree)
 {
+
 binary_tree_t *root;
 
 if (!tree)
@@ -19,7 +20,7 @@ root = tree->left;
 
 if (root)
 {
-tree->left = new_root->right;
+tree->left = root->right;
 
 if (root->right)
 root->right->parent = tree;
