@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+bst_t *bst_min(bst_t *min_node);
 
 /**
  * bst_remove - removes a node from a Binary Search Tree
@@ -10,7 +11,7 @@
 
 bst_t *bst_remove(bst_t *root, int value)
 {
-bst_t *left_root, *right_root;
+bst_t *left_root, *right_root, *p;
 left_root = root->left;
 right_root = root->right;
 if (!root)
