@@ -14,12 +14,10 @@
 binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 {
 
-binary_tree_t *p_left, *p_right;
-binary_tree_t *pop;
-
-*p_left = NULL;
-*p_right = NULL;
-*pop = (node != NULL ? node->parent : NULL);
+binary_tree_t *p_left = NULL;
+binary_tree_t *p_right = NULL;
+binary_tree_t *pop = (node != NULL ? node->parent : NULL);
+binary_tree_t  *uncle;
 
 if (pop != NULL)
 {
@@ -30,5 +28,6 @@ p_right = pop->parent->right;
 }
 }
 
-return (p_left == pop ? p_right : p_left);
+uncle = (p_left == pop ? p_right : p_left);
+return (uncle);
 }
