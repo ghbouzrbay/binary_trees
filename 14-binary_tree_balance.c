@@ -21,7 +21,7 @@ if ((p->left == NULL) && (p->right == NULL))
 
 if (a_height > *max)
 {
-a_height = *max;
+*max = a_height;
 }
 }
 
@@ -47,7 +47,8 @@ int binary_tree_balance(const binary_tree_t *tree)
 
 {
 
-int balance_factor = 0, height_ = 0, _height = 0;
+int balance_factor = 0;
+int height_ = 0, _height = 0;
 
 if (tree == NULL)
 return (0);

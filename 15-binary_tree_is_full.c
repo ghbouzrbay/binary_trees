@@ -22,9 +22,9 @@ if ((tree->left) && (tree->right))
 
 p_left = binary_tree_is_full(tree->left);
 p_right = binary_tree_is_full(tree->right);
-	
+
 return (p_left && p_right);
 }
 
-	return (0);
+return (0);
 }
