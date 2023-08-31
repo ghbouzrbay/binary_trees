@@ -1,7 +1,8 @@
 #include "binary_trees.h"
 
 /**
- * _binary_tree_balance_ - function that computes the height of a binary tree's node.
+ * _binary_tree_balance_ - function that computes
+ * the height of a binary tree's node.
  *
  * @p: pointer to the root node of the tree to measure the height.
  * @a_height: accumulated height.
@@ -29,7 +30,7 @@ else
 _binary_tree_balance_(p->left, a_height + 1, max);
 _binary_tree_balance_(p->right, a_height + 1, max);
 }
-	
+
 }
 }
 
@@ -51,7 +52,7 @@ int balance_factor = 0, height_ = 0, _height = 0;
 if (tree == NULL)
 return (0);
 
-_binary_tree_balane_(tree->left, 1, &height_);
+_binary_tree_balance_(tree->left, 1, &height_);
 _binary_tree_balance_(tree->right, 1, &_height);
 balance_factor += height_ - _height;
 
